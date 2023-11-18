@@ -1,31 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: url("https://media.macphun.com/img/uploads/macphun/blog/1359/rain-photography-cover.jpg?q=75&w=1710&h=906&resize=cover")
-    center/cover no-repeat;
-  position: relative;
-  /* height: 100vh; */
+  /* background-image: url(./img/Featured-Image-Live-Weather-Wallpapers-Android.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Adjust the last value for darkness (0 is transparent, 1 is opaque) */
-}
-
-/* Add additional styles for your content */
-
 .mainDiv {
   filter: brightness(100%) !important;
 }
@@ -56,7 +33,6 @@ button {
 .head2 {
   border-bottom: 2px white solid;
   font-size: 50px;
-  font-family: "Abril Fatface", serif;
 }
 p {
   color: white;
