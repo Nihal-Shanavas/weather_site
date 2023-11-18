@@ -1,91 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather_App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body background="./images/photo-1519692933481-e162a57d6721.jpg">
-
-
+  <body
+    background="https://media.macphun.com/img/uploads/macphun/blog/1359/rain-photography-cover.jpg?q=75&w=1710&h=906&resize=cover"
+  >
     <div class="mainDiv">
-     
+      <!-- search bar -->
+      <div class="row justify-content-center mt-3">
+        <input
+          id="searchCity"
+          type="text"
+          placeholder=" Enter City"
+          class="w-25 mt-5 text-center"
+        />&nbsp;&nbsp;
+        <button type="button" class="mt-5" onclick="search()">
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
+        </button>
 
-        <!-- search bar -->
-        <div class="row justify-content-center mt-3">
-              
-           <input id="searchCity" type="text" placeholder=" Enter City" class="w-25 mt-5 text-center">&nbsp;&nbsp;
-            <button type="button" class=" mt-5" onclick="search()"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+        <div
+          class="w-25 loc mt-5 ms-3 pt-2 row justify-content-center aDiv text-center"
+          style="height: 55px"
+        >
+          <a href="" class="mb-2" style="padding: 10px" onclick="accessLoc()"
+            >Current Location</a
+          >
+        </div>
+      </div>
 
-            <div class="w-25 loc mt-5 ms-3 pt-2 row justify-content-center aDiv text-center" style="height: 55px;">
-               <a href="" class="mb-2" style="padding: 10px;;" onclick="accessLoc()">Current Location</a>
-            </div>
+      <!-- left side -->
+      <div class="row">
+        <div class="col-lg-6 justify-content-center row p-3">
+          <!-- date -->
+          <div class="date text-white text-center mt-5 pt-4">
+            <h2 class="pt-1">
+              <i class="fa-solid fa-calendar-days" style="color: #ffffff">
+                18 / 11 / 2023</i
+              >
+            </h2>
+          </div>
+
+          <!-- temp -->
+          <div class="text-white text-center m-5 temp w-50" id="temp1">
+            <h1 class="head1 mt-5">30&#8451;</h1>
+            <h1>
+              <i
+                class="fa-solid fa-cloud-sun-rain i1"
+                style="color: #ffffff; font-size: 145px"
+              ></i>
+            </h1>
+          </div>
         </div>
 
+        <!-- right side -->
+        <div class="col-lg-6 row justify-content-center">
+          <!-- location -->
+          <div class="date text-white text-center mt-5 pt-3" id="loc">
+            <h2 class="pt-1 head2 pb-1">Kakkanadu</h2>
+          </div>
 
-        <!-- left side -->
-        <div class="row">
-            <div class="col-lg-6 justify-content-center row p-3">
-
-                <!-- date -->
-                <div class="date text-white text-center mt-5 pt-4 ">
-                    <h2 class="pt-1"><i class="fa-solid fa-calendar-days" style="color: #ffffff;"> 16/ 10/ 2023</i></h2>
-                </div>
-
-                <!-- temp -->
-                <div class="text-white text-center m-5 temp  w-50" id="temp1">
-                    <h1 class="head1 mt-5">30&#8451;</h1>
-                      <h1> <i class="fa-solid fa-cloud-sun-rain i1" style="color: #ffffff; font-size:145px;"></i>
-                    </h1> 
-                </div>
-
+          <!--  -->
+          <div class="row justify-content-center text-center" id="maxTemp">
+            <div class="col-md-6">
+              <p>
+                <i
+                  class="fa-solid fa-temperature-high"
+                  style="color: #ffffff"
+                ></i
+                ><br />
+                Temp-Max <b>30 &#8451;</b>
+              </p>
+              <hr />
+              <p>
+                <i
+                  class="fa-solid fa-temperature-low"
+                  style="color: #ffffff"
+                ></i
+                ><br />
+                Temp-Min <b>30&#8451;</b>
+              </p>
             </div>
-
-            <!-- right side -->
-            <div class="col-lg-6 row justify-content-center">
-
-                <!-- location -->
-                 <div class="date text-white text-center mt-5 pt-3 " id="loc">
-                    <h2 class="pt-1 head2 pb-1"> Kakkanadu</h2>
-                </div> 
-
-                <!--  -->
-                <div class="row justify-content-center text-center" id="maxTemp">
-                    <div class="col-md-6">
-                        <p><i class="fa-solid fa-temperature-high" style="color: #ffffff;"></i><br>
-                            Temp-Max <b>30 &#8451;</b>
-                        </p>
-                        <hr>
-                        <p><i class="fa-solid fa-temperature-low" style="color: #ffffff;"></i><br> 
-                            Temp-Min <b>30&#8451;</b>
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><i class="fa-solid fa-wind" style="color: #ffffff;"></i><br>
-                            Wind speed <b>1.47 m/h</b>
-                        </p>
-                        <hr>
-                        <p><i class="fa-solid fa-water" style="color: #ffffff;"></i><br>
-                            Humidity <b>76%</b>
-                        </p>
-                    </div>
-                </div>
-                
+            <div class="col-md-6">
+              <p>
+                <i class="fa-solid fa-wind" style="color: #ffffff"></i><br />
+                Wind speed <b>1.47 m/h</b>
+              </p>
+              <hr />
+              <p>
+                <i class="fa-solid fa-water" style="color: #ffffff"></i><br />
+                Humidity <b>76%</b>
+              </p>
             </div>
+          </div>
         </div>
-
+      </div>
     </div>
-
-</body>
-<script src="./weather.js"></script>
-
-
+  </body>
+  <script src="./weather.js"></script>
 </html>
